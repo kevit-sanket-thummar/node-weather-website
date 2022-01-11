@@ -16,7 +16,8 @@ const forecast =(latitude,longitude,callback)=>{
             }
             else{
                 // console.log(error)
-            callback(undefined,'It is currently ' +  data.current.temperature + ' degrees out.' +'There is a '+ data.current.precip + '% chance of rain.')
+            // console.log()
+            callback(undefined, data.current.weather_descriptions[0] + '. It is currently ' +  data.current.temperature + ' degrees out. It feels like' +data.current.feelslike +'There is a '+ data.current.precip + '% chance of rain & the humidity is' + data.current.humidity + '%')
             }
     })
     .catch((error)=>{
